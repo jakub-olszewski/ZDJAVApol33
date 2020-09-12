@@ -5,11 +5,21 @@ package pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1;
  * @project : ZDJAVApol33
  * @since : 12.09.2020
  **/
-public class Kwadrat {
+public class Kwadrat implements Obliczenia{
 
     private int bok;
 
     public Kwadrat(int bok) {
         this.bok = bok;
+    }
+
+    @Override
+    public float obliczPole() {
+        return 0;
+    }
+
+    @Override
+    public float obliczObwod() {
+        return 0;
     }
 }
