@@ -30,7 +30,22 @@ public class Segregator {
         }
     }
 
-    public class Zakladka extends ArrayList {
+    public Zakladka nowaZakladka(String tytul){
+        return new Zakladka(tytul);
+    }
+
+    public static Zakladka stworzZakladka(String tytul){
+        return new Zakladka(tytul);
+    }
+
+    public void wlozZakladke(Zakladka zakladka) {
+        zakladki.add(zakladka);
+    }
+
+    /**
+     * Klasa wewnetrzna na potrzeby segregatora
+     */
+    public static class Zakladka extends ArrayList {
 
         private String tytul;
 
