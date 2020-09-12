@@ -11,7 +11,8 @@ public class KlasyWewnetrzneMain {
 
         Segregator dokumenty = new Segregator("Dokumenty");
         dokumenty.utworzZakladke("Rachunki za prad");
-
+        dokumenty.utworzZakladke("Rachunki za internet");
+        dokumenty.wypiszZakladki();
 
     }
 }
