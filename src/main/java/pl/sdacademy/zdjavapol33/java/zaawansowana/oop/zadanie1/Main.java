@@ -18,5 +18,14 @@ public class Main {
         Prostokat prostokat = new Prostokat(3, 4);
 
 
+        List<Figura> listaFigur = new ArrayList<>();
+        listaFigur.add(kolo);
+        listaFigur.add(kwadrat);
+
+        for(Figura figura : listaFigur){
+            // figura.obliczPole(); // nie dziala gdy figura jest Object
+            figura.obliczPole();
+        }
+
     }
 }
