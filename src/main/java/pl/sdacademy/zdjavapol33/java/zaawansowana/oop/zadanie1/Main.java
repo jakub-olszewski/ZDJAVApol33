@@ -1,5 +1,10 @@
 package pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1;
 
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.figury.Kolo;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.figury.Kwadrat;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.figury.Prostokat;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.figury.Trapez;
+
 import java.util.ArrayList;
 import java.util.List;
 

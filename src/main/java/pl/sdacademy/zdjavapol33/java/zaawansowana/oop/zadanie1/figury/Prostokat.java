@@ -1,4 +1,6 @@
-package pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1;
+package pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.figury;
+
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.Figura;
 
 /**
  * @author : Jakub Olszewski [http://github.com/jakub-olszewski]

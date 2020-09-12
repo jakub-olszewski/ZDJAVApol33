@@ -1,4 +1,4 @@
-package pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1;
+package pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.interfejsy;
 
 /**
  * Interfejs, posiada wylacznie opis bez implementacji, czyli działania

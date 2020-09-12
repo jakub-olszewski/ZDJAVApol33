@@ -1,8 +1,8 @@
 package pl.sdacademy.zdjavapol33.java.zaawansowana.klasy.anonimowe;
 
 import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.Figura;
-import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.Kwadrat;
-import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.Obliczenia;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.figury.Kwadrat;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.interfejsy.Obliczenia;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,6 @@
-package pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1;
+package pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.figury;
+
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1.Figura;
 
 /**
  * Kwadrat rozszerza klasę Figura
@@ -6,7 +8,7 @@ package pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie1;
  * @project : ZDJAVApol33
  * @since : 12.09.2020
  **/
-public class Kwadrat extends Figura{
+public class Kwadrat extends Figura {
 
     private int bok;
 
