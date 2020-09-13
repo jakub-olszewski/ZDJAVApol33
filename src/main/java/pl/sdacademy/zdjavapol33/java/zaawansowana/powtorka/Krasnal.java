@@ -17,6 +17,7 @@ public class Krasnal {
 
     @Override
     public String toString() {
+
         return "Krasnal{" +
                 "imie='" + imie + '\'' +
                 '}';
