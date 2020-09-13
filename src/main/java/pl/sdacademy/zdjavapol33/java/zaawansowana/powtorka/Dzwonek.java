@@ -11,6 +11,7 @@ public class Dzwonek {
 
     public Dzwonek() {
         this.dzwiek = "aaa kotki dwa...";
+        this.przyciskWcisniety = false;
     }
 
     private String dzwiek;
