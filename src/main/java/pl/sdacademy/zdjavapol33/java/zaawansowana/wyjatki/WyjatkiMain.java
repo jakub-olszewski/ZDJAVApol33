@@ -26,6 +26,18 @@ public class WyjatkiMain {
             }
 
         }
+
+        try {
+            Obliczenia.pobierzLiczbeSekund(1001);
+        } catch (TooBigArgumentException e) {// obsłużenie wyjatku szczegółowego
+            System.out.println("Blad : " + e.getMessage());
+        } catch (Exception e) {// obsłużenie wyjatku ogólnego
+            // w przypadku illegalArgumentException
+            // zostanie złapany przez Exception
+            // ponieważ illegalArgumentException extends Exception
+            System.err.println("Error :" + e.getMessage());
+        }
+
         boolean jestPrad = false;
         if(!jestPrad){
             // zrzucanie wyjatku - nastepuje przerwanie programu
