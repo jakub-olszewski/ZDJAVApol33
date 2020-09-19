@@ -26,4 +26,25 @@ public class Zadanie1Main {
      * gabaryt C – 15,99
      *
      */
+
+    public static void main(String[] args) {
+
+        // obiekt paczkomat z Warszawy
+        Paczkomat paczkomatWarszawa = new Paczkomat("WAW-01","Warszawa ul.Cwiartki 3/4");
+
+        // Dlugopis musi extends Zawartosc
+        Dlugopis dlugopis = new Dlugopis();// tworzymy długopis
+        Kot kotek = new Kot();
+        // new - nowy obiekt
+        // <> - typ generyczny
+        Paczka<Dlugopis> paczka = new Paczka<Dlugopis>("12323122",dlugopis);
+        paczka.setDlugosc(11);// ponizej ustawimy wlasciwosci paczki
+        paczka.setSzerogosc(3);
+        paczka.setWysokosc(3);
+        paczka.setWaga(1);
+
+        //Paczka<Kot> paczkaZKotem;// nie możliwa - bład
+
+        paczkomatWarszawa.nadaj(paczka);
+    }
 }
