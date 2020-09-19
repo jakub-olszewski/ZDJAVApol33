@@ -20,5 +20,7 @@ public class PapierMain {
         // Konstruktor - na długość i szerokość
 
         // w klasie main utworzyc obiekt A3 i wypisać rozmiar na konsolę
+        RozmiarPapier rozmiarPapierA4 = RozmiarPapier.A4;
+        System.out.println(rozmiarPapierA4);
     }
 }
