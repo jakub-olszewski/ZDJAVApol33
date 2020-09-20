@@ -45,6 +45,11 @@ public class Zadanie1Main {
 
         //Paczka<Kot> paczkaZKotem;// nie możliwa - bład
 
-        paczkomatWarszawa.nadaj(paczka);
+        try {// obsługa wyjatku za dużej wagi
+            paczkomatWarszawa.nadaj(paczka);
+        } catch (WeightOverloadException e) {
+            // TODO wypisz komunikat
+            e.printStackTrace();
+        }
     }
 }

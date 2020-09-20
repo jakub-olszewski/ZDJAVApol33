@@ -25,12 +25,16 @@ public class Paczkomat<Z extends Zawartosc> {
      * sprawdzenie gabarytów na podstawie gabarytów zwracamy cene wysyłki
      * @param paczka
      */
-    public void nadaj(Paczka<Z> paczka){
-        // TODO sprawdzmy wagę paczki jeśli >25kg zrzucamy wyjatek
+    public void nadaj(Paczka<Z> paczka) throws WeightOverloadException {// ważne aby było throws - czyli informacja że metoda zrzuca wyjatek
+        // sprawdzmy wagę paczki jeśli >25kg zrzucamy wyjatek
+        if(paczka.getWaga()>25){
+            throw new WeightOverloadException();// własny wyjatek do ciezkiej paczki
+        }
 
         //paczka.getDlugosc(); // szerogosc wysykosc ... pobieramy wlasciwosci i porównujemy z gabaryty
         // TODO na podstawie właściwyości wyliczamy Gabaryt
         Gabaryt gabarytPaczki = wyliczGabaryt(paczka);
+
         // TODO na podstawie gabarytu zwracamy cene
         switch(gabarytPaczki){
             case A:
