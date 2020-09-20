@@ -73,15 +73,14 @@ public class LambdaMain extends MainClass {
         System.out.println(liczbyAnonimowe.dodaj(9, 5));
 
 
+        // gotowy interfejs funkcjonalny w Java
+        // działa podobnie jak PytanieParzystosc
+        Predicate<Double> pytanie = (a)-> a%2==0;
+        System.out.println(pytanie.test(5d));
 
+        Predicate<Double> wiekszaOd10 = liczba -> liczba>10;
 
-
-
-
-
-
-
-//        Predicate<Boolean> pytanie = (a)-> a.equals(true);
-//        pytanie.test(5+5==10);
+        // polaczenie 2 predykatow
+        System.out.println(pytanie.and(wiekszaOd10).test(11.0));
     }
 }
