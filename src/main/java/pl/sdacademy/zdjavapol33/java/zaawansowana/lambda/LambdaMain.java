@@ -41,7 +41,36 @@ public class LambdaMain extends MainClass {
             return 3.141592f;
         };
 
+        System.out.println("Lambda z parametrem");
+        // bez lambda
+        PytanieParzystosc pytanie1 = new PytanieParzystosc() {
+            @Override
+            public boolean czyJest(int liczba) {
+                return liczba % 2 == 0;
+            }
+        };
 
+        // z lambda
+        PytanieParzystosc pytanie2 = liczba -> (liczba % 2) == 0;
+        System.out.println(pytanie2.czyJest(4));
+
+        System.out.println("Bez Lambda z 2 parametrami");
+
+        // implementacja anonimowa
+        Liczby liczbyAnonimowe = new Liczby() {
+            @Override
+            public int dodaj(int a, int b) {
+                return a + b;
+            }
+        };
+
+        // implementacja nieanonimowa
+        Liczby liczbyNieAnonimowe = new LiczbyNieAnonimowe();
+
+        Liczby liczbyLambda = (a,b) -> a + b;
+
+        System.out.println(liczbyNieAnonimowe.dodaj(3, 5));
+        System.out.println(liczbyAnonimowe.dodaj(9, 5));
 
 
 
