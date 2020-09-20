@@ -7,53 +7,61 @@ package pl.sdacademy.zdjavapol33.java.zaawansowana.typygeneryczne.zadanie1;
  **/
 public class Paczkomat<Z extends Zawartosc> {
 
-    /**
-     * Konstruktor do tworzenia paczkomatu
-     * @param nazwa
-     * @param lokalizacja
-     */
+    private String lokalizacja;
+    private Paczka paczka;
+    private String nazwa;
+    private int MAX_WEIGHT = 25;
+
+    public String getLokalizacja() {
+        return lokalizacja;
+    }
+ 
     public Paczkomat(String nazwa, String lokalizacja) {
         this.nazwa = nazwa;
         this.lokalizacja = lokalizacja;
     }
-
-    String nazwa;
-    String lokalizacja;
-
-    /**
-     * Metoda ktora nadaje paczke
-     * sprawdzenie gabarytów na podstawie gabarytów zwracamy cene wysyłki
-     * @param paczka
-     */
-    public void nadaj(Paczka<Z> paczka) throws WeightOverloadException {// ważne aby było throws - czyli informacja że metoda zrzuca wyjatek
-        // sprawdzmy wagę paczki jeśli >25kg zrzucamy wyjatek
-        if(paczka.getWaga()>25){
-            throw new WeightOverloadException();// własny wyjatek do ciezkiej paczki
+ 
+    public void nadaj(Paczka<Z> paczka) throws Exception {
+        if (paczka.getWaga() > 25) {
+            throw new WeightOverloadException();
         }
-
-        //paczka.getDlugosc(); // szerogosc wysykosc ... pobieramy wlasciwosci i porównujemy z gabaryty
-        // TODO na podstawie właściwyości wyliczamy Gabaryt
-        Gabaryt gabarytPaczki = wyliczGabaryt(paczka);
-
-        // TODO na podstawie gabarytu zwracamy cene
-        switch(gabarytPaczki){
+        if(paczka.getWysokosc()>Gabaryt.C.getWysokosc()){
+            throw new Exception("Wprowadzona wysokość: " + paczka.getWysokosc() + " jest zbyt duża");
+        }
+        if(paczka.getSzerokosc()>Gabaryt.C.getSzerokosc()){
+            throw new Exception("Wprowadzona szerokość: " + paczka.getSzerokosc() + " jest zbyt duża");
+        }
+        if(paczka.getDlugosc()>Gabaryt.C.getDlugosc()){
+            throw new Exception("Wprowadzona długość: " + paczka.getWysokosc() + " jest zbyt duża");
+        }
+ 
+ 
+        Gabaryt gabarytyPaczki = wyliczGabaryt(paczka);
+        switch (gabarytyPaczki) {
             case A:
-                // cena paczki
-                System.out.println("Proszę przygotować :12,99 zł");
-
+                System.out.println("Proszę przygotować 12,99zl");
+                break;
+            case B:
+                System.out.println("Proszę przygotować 13,99zl");
+                break;
+            case C:
+                System.out.println("Proszę przygotować 15,99zl");
+                break;
+ 
         }
+ 
     }
-
-    /**
-     * Metoda wylicz gabaryt na podstawie wielkości paczki
-     * @param paczka
-     * @return
-     */
-    private Gabaryt wyliczGabaryt(Paczka<Z> paczka){
-        // TODO pobieramy z paczka wlasciwosc np dlugosc
-        // porównujemy z Gabarytem
-        // Gabaryt.A.getDlugosc() - dlugosc gabarytu A
+ 
+    private Gabaryt wyliczGabaryt(Paczka<Z> paczka) {
+        if (Gabaryt.A.getDlugosc() >= paczka.getDlugosc() && MAX_WEIGHT >= paczka.getWaga() && Gabaryt.A.getSzerokosc() >= paczka.getSzerokosc()) {
+            return Gabaryt.A;
+        } else if (Gabaryt.B.getDlugosc() >= paczka.getDlugosc() && MAX_WEIGHT >= paczka.getWaga() && Gabaryt.B.getSzerokosc() >= paczka.getSzerokosc()) {
+            return Gabaryt.B;
+        } else if (Gabaryt.C.getDlugosc() >= paczka.getDlugosc() && MAX_WEIGHT >= paczka.getWaga() && Gabaryt.C.getSzerokosc() >= paczka.getSzerokosc()) {
+            return Gabaryt.C;
+        }
         return null;
+ 
     }
-
+ 
 }

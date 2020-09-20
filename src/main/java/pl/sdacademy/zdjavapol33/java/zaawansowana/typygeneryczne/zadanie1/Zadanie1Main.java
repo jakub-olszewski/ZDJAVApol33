@@ -39,7 +39,7 @@ public class Zadanie1Main {
         // <> - typ generyczny
         Paczka<Dlugopis> paczka = new Paczka<Dlugopis>("12323122",dlugopis);
         paczka.setDlugosc(11);// ponizej ustawimy wlasciwosci paczki
-        paczka.setSzerogosc(3);
+        paczka.setSzerokosc(3);
         paczka.setWysokosc(3);
         paczka.setWaga(1);
 
@@ -47,7 +47,7 @@ public class Zadanie1Main {
 
         try {// obsługa wyjatku za dużej wagi
             paczkomatWarszawa.nadaj(paczka);
-        } catch (WeightOverloadException e) {
+        } catch (Exception e) {
             // TODO wypisz komunikat
             e.printStackTrace();
         }

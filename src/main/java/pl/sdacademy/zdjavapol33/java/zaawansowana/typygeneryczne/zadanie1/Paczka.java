@@ -13,7 +13,7 @@ public class Paczka<Z extends Zawartosc> {
     }
 
     int dlugosc;
-    int szerogosc;
+    int szerokosc;
     int wysokosc;
     int waga;
 
@@ -25,12 +25,12 @@ public class Paczka<Z extends Zawartosc> {
         this.dlugosc = dlugosc;
     }
 
-    public int getSzerogosc() {
-        return szerogosc;
+    public int getSzerokosc() {
+        return szerokosc;
     }
 
-    public void setSzerogosc(int szerogosc) {
-        this.szerogosc = szerogosc;
+    public void setSzerokosc(int szerokosc) {
+        this.szerokosc = szerokosc;
     }
 
     public int getWysokosc() {
@@ -59,6 +59,5 @@ public class Paczka<Z extends Zawartosc> {
 
     private String etykieta;
     private Z zawartosc;
-
 
 }
