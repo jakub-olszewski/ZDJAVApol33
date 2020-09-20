@@ -27,6 +27,15 @@ public class NIOMain {
 
         Path source = Paths.get(lokalizacja + plik0);
 
+        /**
+         * Zawartość pliku csv
+         * Przykład:
+         * cat,kot;
+         * dog,pies;
+         *
+         */
+        Map<String,String> mapaSlow = new HashMap<>();
+
         try {
             // atrybuty pliku
             BasicFileAttributes attributes = Files.readAttributes(source, BasicFileAttributes.class);
@@ -40,10 +49,17 @@ public class NIOMain {
             System.out.println("Zawartość pliku:");
             int counter = 0;
 
-            Map<String,String> mapaSlow = new HashMap<>();
 
             for (String row : linesFromFile){
                 System.out.println(counter+"|"+row);
+
+                String[] slowoZTlumaczeniem = row.split(",");
+                // klucz i wartość
+                String klucz = slowoZTlumaczeniem[0];// po angielsku
+                String wartosc = slowoZTlumaczeniem[1];// po polsku
+                wartosc = wartosc.replace(";","");
+
+                mapaSlow.put(klucz,wartosc);
 
                 // zamieniamy dane słowo na KONIK
                 if(row.contains("konik")){
@@ -59,6 +75,11 @@ public class NIOMain {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+        // for dla mapy ?
+        for(Map.Entry<String,String> elementZMapy : mapaSlow.entrySet()){
+            System.out.println(elementZMapy.getKey()+" = "+elementZMapy.getValue());
         }
     }
 }
