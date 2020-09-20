@@ -1,4 +1,14 @@
 package pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie2;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie2.animals.Animal;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie2.animals.birds.Eagle;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie2.animals.mammals.Deer;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie2.animals.mammals.Elephant;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie2.animals.mammals.Lion;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie2.animals.mammals.Squirrel;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie2.interfejsy.*;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie2.plants.Grass;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie2.plants.Plant;
+import pl.sdacademy.zdjavapol33.java.zaawansowana.oop.zadanie2.snakes.Boa;
 
 /**
  * @author : Jakub Olszewski [http://github.com/jakub-olszewski]
@@ -54,6 +64,7 @@ public class Zadanie2Main {
          *
          * Dostajemy infomacje informacje o narodzinach
          */
+        Squirrel pinky = new Squirrel("Pinky");
 
         /**
          * Zadanie2: Utworz obiekt Eagle. Wykonaj metodę eat()
@@ -63,13 +74,18 @@ public class Zadanie2Main {
          *
          * 'imieWiewiorki' została zjedzona przez 'imieOrła'
          */
-
+        Eagle baldEagle = new Eagle("Bald Eagle");
+        baldEagle.eat(pinky);
 
         /**
          * Zadanie3:Utworz obiekt Lion i Elephant.
          * Elephant ucieka.
          * Lion chce to zjeść.
          */
+        Lion kingLion = new Lion("King Lion");
+        Elephant dumboElephant = new Elephant("Dumbo");
+        dumboElephant.runAwayFrom(kingLion);
+        kingLion.eat(dumboElephant);
 
 
         /**
@@ -78,13 +94,21 @@ public class Zadanie2Main {
          * Lew uciekł z ZOO i chce zjeść jelonka.
          *
          */
+        Deer bambiDeer = new Deer ("Bambi");
+        Grass grass = new Grass("Trawa");
+        bambiDeer.eat(grass);
+
+        bambiDeer.runAwayFrom(kingLion);
+        kingLion.eat(bambiDeer);
 
         /**
          * Zadanie5: Boa 'Kaa' próbuje udusić jelonka. Udaje mu się. :(
          * Potem próbuje udusić słonia i ma problem.
          *
          */
-
+        Boa kaaBoa = new Boa("Kaa");
+        kaaBoa.strangle(bambiDeer);
+        kaaBoa.strangle(dumboElephant);
 
     }
 }
