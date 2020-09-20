@@ -9,4 +9,7 @@ public class WeightOverloadException extends Exception {
 
     // TODO wyjatek podobnie jak TooBigArgumentException
     // w informacji paczka wieksza od 25
+    WeightOverloadException(){
+        super("Waga jest większa niż 25 kg, paczka nie moze zostać nadana!");
+    }
 }
