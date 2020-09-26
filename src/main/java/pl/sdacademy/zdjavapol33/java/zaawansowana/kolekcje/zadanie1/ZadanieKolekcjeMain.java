@@ -55,5 +55,12 @@ public class ZadanieKolekcjeMain {
          * 2)
          * pobieranie z klawiatury słowa (Scanner - java-podstawy)
          */
+
+        Dictionary dictionary = new DictionaryImpl();
+        String word = dictionary.search("Window");
+        System.out.println(word);
+
+        word = dictionary.search("english");
+        System.out.println(word);
     }
 }
