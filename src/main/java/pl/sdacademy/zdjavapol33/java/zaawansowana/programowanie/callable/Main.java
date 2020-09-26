@@ -10,8 +10,10 @@ import java.util.concurrent.*;
 public class Main {
 
     public static void main(String[] args) {
-        FactorialTask task = new FactorialTask(-5);// zadanie liczace silnie
-        ExecutorService executorService = Executors.newSingleThreadExecutor();// egzekutor
+        FactorialTask task = new FactorialTask(5);// zadanie liczace silnie / Callable
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        // egzekutor - wykonawcy zadań
+        // Single - z jednym zadaniem w danym czasie
         Future<Integer> future = executorService.submit(task);// uruchomienie zadania
         int result = 0;
         try {

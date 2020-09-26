@@ -15,6 +15,7 @@ public class Most {
     }
 
     private String name;
+    private float dlugosc;
 
     /**
      * Konstruktor bez argumentowy
@@ -22,12 +23,22 @@ public class Most {
     public Most(){
         // this odnosi się do tej klasy
         // this() odnosi się do danego konstruktora
-        this("Bez nazwy");
+        this("Bez nazwy",123f);
     }
 
     public Most(String name){
         this.name = name;
         wypisz();
+        /**
+         *
+         *
+         *
+         */
+    }
+
+    public Most(String name, float dlugosc){
+        this(name);
+        this.dlugosc = dlugosc;
     }
 
     public void wypisz(){

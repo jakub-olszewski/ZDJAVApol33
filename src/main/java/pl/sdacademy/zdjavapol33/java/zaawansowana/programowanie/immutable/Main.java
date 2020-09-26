@@ -7,7 +7,7 @@ package pl.sdacademy.zdjavapol33.java.zaawansowana.programowanie.immutable;
  **/
 public class Main {
 
-    static final int MAX_WIDTH = 1080;
+    static final int MAX_WIDTH = 1080;// final jest tutaj istotne ze wzgledu na niezmienność!
 
     public static void main(String[] args) {
         /**

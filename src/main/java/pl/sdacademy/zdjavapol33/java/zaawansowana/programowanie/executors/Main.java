@@ -25,6 +25,7 @@ public class Main {
             System.out.println("myTask...");
         };
 
+        // terminarz watku opoznienie o 10 sekund
         ScheduledFuture<?> schedule = scheduledExecutorService.schedule(myTask, 10, TimeUnit.SECONDS);
         try {
             schedule.get(); // result after 10 seconds

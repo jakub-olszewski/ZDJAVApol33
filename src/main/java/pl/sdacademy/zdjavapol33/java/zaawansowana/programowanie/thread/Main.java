@@ -7,12 +7,20 @@ package pl.sdacademy.zdjavapol33.java.zaawansowana.programowanie.thread;
  **/
 public class Main {
 
+    /**
+     * Tworzenie watków
+     * @param args
+     */
     public static void main(String[] args) {
 
         // Runnable
         WatekRunnable watekRunnable = new WatekRunnable();
         Thread watek = new Thread(watekRunnable);// klasa Thread wykorzystujaca runnable
         watek.start();// uruchomienie wątku
+
+        Runnable r1 = () -> System.out.println("watek1");
+        Thread t1 = new Thread(r1);
+        t1.start();
 
         // Thread
         WatekThread watekThread = new WatekThread();

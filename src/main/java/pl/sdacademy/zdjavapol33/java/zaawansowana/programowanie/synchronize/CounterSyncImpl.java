@@ -25,7 +25,7 @@ public class CounterSyncImpl implements Counter , Callable {
     private int value;
 
     public void increment() {
-        synchronized (this) {
+        synchronized (this) {// ten blok moze wykonać jeden watek w danym czasie
             System.out.println("Counter "+number+" | increment()");
             value += 1;
         }
