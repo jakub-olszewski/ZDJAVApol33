@@ -29,9 +29,14 @@ public class DictionaryImpl implements Dictionary {
             put("english","angielski");
         }
 
+        /**
+         *
+         * @param csvPath sciezka do csv
+         * @throws IOException
+         */
         public void importCSV(String csvPath) throws IOException {
             Path source = Paths.get(csvPath);
-            List<String> linesFromFile = Files.readAllLines(source);
+            List<String> linesFromFile = Files.readAllLines(source);// lista lini z csv
             for(String line:linesFromFile) {
                 String[] columns = line.split(",");
                 put(columns[0],columns[1]);// liczymy od zera

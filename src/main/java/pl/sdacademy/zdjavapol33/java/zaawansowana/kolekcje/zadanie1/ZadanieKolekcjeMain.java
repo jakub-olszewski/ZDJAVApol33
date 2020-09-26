@@ -1,5 +1,7 @@
 package pl.sdacademy.zdjavapol33.java.zaawansowana.kolekcje.zadanie1;
 
+import java.io.IOException;
+
 /**
  * @author : Jakub Olszewski [http://github.com/jakub-olszewski]
  * @project : ZDJAVApol33
@@ -62,5 +64,14 @@ public class ZadanieKolekcjeMain {
 
         word = dictionary.search("english");
         System.out.println(word);
+
+        DictionaryImpl.WordData wordData = new DictionaryImpl.WordData();
+
+        // pobieranie z csv
+        try {
+            wordData.importCSV("C:/plik.csv");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
