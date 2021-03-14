@@ -60,6 +60,7 @@ public class MockitoAnnotationInjectTest {
 
     }
 
+
     @Test
     public void whenUseInjectMockAnnotatnioTest(){
 

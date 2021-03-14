@@ -62,7 +62,7 @@ public class MockitoAnnotationMockTest {
 
         // działanie atrapy
         // kiedy mockedList zapytamy o size() wtedy return 2020
-        when(mockedList.size()).thenReturn(2020);
+        //when(mockedList.size()).thenReturn(2020);
 
         // then
         assertEquals(2020,mockedList.size());
